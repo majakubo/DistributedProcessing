@@ -4,8 +4,9 @@
 #include "bst.h"
 #include "bstnode.h"
 #include <stdio.h>
+
 BstNode * create_proper_bst() {
-    BstNode * root = nullptr;
+    BstNode * root = NULL;
     tree_insert(&root, create_node(4,4));
     tree_insert(&root, create_node(2,4));
     tree_insert(&root, create_node(6,4));

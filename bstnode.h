@@ -1,4 +1,4 @@
-typedef struct node node;
+typedef struct BstNode BstNode;
 struct BstNode {
     int key;
     int value;

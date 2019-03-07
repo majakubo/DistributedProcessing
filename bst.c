@@ -28,7 +28,7 @@ void preorder_tree_walk(BstNode *x) {
 };
 
 BstNode * tree_search(BstNode *x, int key) {
-    if (x == nullptr || key == x->key) {
+    if (x == NULL || key == x->key) {
         return x;
     } else {
         if (key < x->key)
@@ -57,7 +57,7 @@ BstNode * tree_successor(BstNode * x) {
         return tree_minimum(x->right_child);
     }
     BstNode * y = x->parent;
-    while (y != nullptr && x == y->right_child) {
+    while (y != NULL && x == y->right_child) {
         x = y;
         y = y->parent;
     }
@@ -70,7 +70,7 @@ void tree_insert(BstNode ** root, BstNode * new_node) {
         *root = new_node;
         return;
     }
-    BstNode * parent_of_current = nullptr;
+    BstNode * parent_of_current = NULL;
     while (current_node != NULL) {
         parent_of_current = current_node;
 
