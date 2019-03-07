@@ -1,7 +1,7 @@
-#include <iostream>
+#include <stdio.h>
 #include "test.h"
 #include "bst.h"
-
+#include "bstnode.h"
 
 
 int main() {

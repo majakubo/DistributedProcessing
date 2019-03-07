@@ -1,4 +1,6 @@
-#include <iostream>
+#include <stdio.h>
+#include "bstnode.h"
+#include "bst.h"
 BstNode * create_node(int key, int value) {
     BstNode * root = (BstNode*) malloc(sizeof(BstNode));
     root->key = key;

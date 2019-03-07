@@ -1,12 +1,5 @@
 #ifndef BST_BST_H
 #define BST_BST_H
-struct BstNode {
-    int key;
-    int value;
-    BstNode * parent;
-    BstNode * left_child;
-    BstNode * right_child;
-};
 BstNode * create_node(int key, int value);
 void inorder_tree_walk(BstNode *x);
 void preorder_tree_walk(BstNode *x);

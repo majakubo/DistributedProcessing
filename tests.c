@@ -2,7 +2,8 @@
 // Created by majaku on 03.03.19.
 //
 #include "bst.h"
-#include <iostream>
+#include "bstnode.h"
+#include <stdio.h>
 BstNode * create_proper_bst() {
     BstNode * root = nullptr;
     tree_insert(&root, create_node(4,4));
