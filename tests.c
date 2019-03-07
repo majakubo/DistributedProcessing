@@ -1,8 +1,9 @@
 //
 // Created by majaku on 03.03.19.
 //
-#include "bst.h"
 #include "bstnode.h"
+#include "bst.h"
+
 #include <stdio.h>
 
 BstNode * create_proper_bst() {

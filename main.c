@@ -1,8 +1,7 @@
 #include <stdio.h>
-#include "test.h"
-#include "bst.h"
 #include "bstnode.h"
-
+#include "bst.h"
+#include "test.h"
 
 int main() {
     test1();
@@ -17,4 +16,5 @@ int main() {
     test10();
     test11();
     return 0;
-}
+};
+
