@@ -1,6 +1,9 @@
+//
+// Created by majaku on 17.03.19.
+//
+#include <stddef.h>
 #include <stdio.h>
-#include "bstnode.h"
-#include "bst.h"
+#include "bstNode.h"
 BstNode * create_node(int key, int value) {
     BstNode * root = (BstNode*) malloc(sizeof(BstNode));
     root->key = key;
@@ -132,17 +135,9 @@ int is_node_valid(BstNode * node) {
     return 1;
 }
 
-int is_bst_valid(BstNode * node) {
-    int right_valid, left_valid;
-    if (node != NULL) {
-        if (is_node_valid(node)) {
-            left_valid = is_bst_valid(node->left_child);
-            right_valid = is_bst_valid(node->right_child);
-            if (left_valid && right_valid) {
-                return 1;
-            }
-        }
+int isBST(struct BstNode * node, int minKey, int maxKey) {
+    if (node == NULL) return 1;
+    if (node->key < minKey || node->key > maxKey)
         return 0;
-    }
-    return 1;
+    return isBST(node->left_child, minKey, node->key-1) && isBST(node->right_child, node->key+1, maxKey);
 }

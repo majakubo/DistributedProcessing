@@ -1,7 +1,13 @@
 #include <stdio.h>
-#include "bstnode.h"
-#include "bst.h"
-#include "test.h"
+
+#include <stdio.h>
+#include <stdio.h>
+#include <malloc.h>
+#include <zconf.h>
+#include "tests.h"
+
+
+
 
 int main() {
     test1();
@@ -15,6 +21,6 @@ int main() {
     test9();
     test10();
     test11();
+    test12();
     return 0;
 };
-
