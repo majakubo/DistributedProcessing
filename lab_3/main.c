@@ -6,6 +6,7 @@
 #include <math.h>
 #include <zconf.h>
 #include <unistd.h>
+#include <wait.h>
 
 
 double calculate_pi(int iterations) {
@@ -21,16 +22,18 @@ double calculate_pi(int iterations) {
     double pi = (double)points_inside/(double)iterations * 4;
     return pi;
 }
-
+pid_t pid_array[10] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, };
 
 int main() {
 
 
     pid_t pid;
+    int i;
     int counter = 0;
-    for(int i = 0; i < 10; i++) {
+    for(i = 0; i < 10; i++) {
         counter++;
         pid = fork();
+        pid_array[i] = pid;
         if(pid == 0) {
             srand(getpid());
             break;
@@ -40,14 +43,14 @@ int main() {
     if(pid == 0) {
         printf("new process number %i\n", counter);
         sleep(1);
-        printf("%d pi calculated %f\n",counter, calculate_pi(100000));
-
+        printf("%d pi calculated %f\n",i, calculate_pi(100000000));
     } else {
-        sleep(5);
+        for(int i = 0; i < 10; i++) {
+            waitpid(pid_array[i] , NULL , 0);
+        }
     }
 
 
     return 0;
 }
-
 
